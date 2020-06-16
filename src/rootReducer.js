@@ -1,6 +1,9 @@
-const INITIAL_STATE = {state: 0};
+const INITIAL_STATE = {memes: []};
 
 const rootReducer = (state=INITIAL_STATE, action) => {
+    if (action.type === 'MEME') {
+        return {...state, memes: [...state.memes, action.payload]}
+    }
     return state
 }
 

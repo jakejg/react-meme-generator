@@ -1,0 +1,6 @@
+.MemeContainer {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    margin: 15px;
+}

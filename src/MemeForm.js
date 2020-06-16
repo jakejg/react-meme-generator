@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import FormGroupComp from './FormGroupComp';
 import { Form, Button } from 'reactstrap';
+import { useDispatch } from 'react-redux';
+import Meme from './Meme';
 
-function MemeForm({ }) {
+function MemeForm() {
     const INITIAL_STATE = {image_url: "", top_text: "", bottom_text: ""}
     const [formData, setFormData] = useState(INITIAL_STATE)
 
+    const dispatch = useDispatch();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -14,6 +17,7 @@ function MemeForm({ }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        dispatch({type: 'MEME', payload: <Meme image_url={formData.image_url} top_text={formData.top_text} bottom_text={formData.bottom_text} />})
  
     }
     

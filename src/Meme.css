@@ -1,0 +1,22 @@
+.Meme {
+    position: relative;
+    margin: 10px;
+}
+
+.Meme-top-text {
+    position: absolute;
+    left: 200px;
+    top: 10px;
+    color: white
+}
+
+.Meme-bottom-text {
+    position: absolute;
+    bottom: 30px;
+    left: 200px;
+    color: white
+}
+
+.Meme-image {
+    width: 400px;
+}
