@@ -3,6 +3,7 @@ import FormGroupComp from './FormGroupComp';
 import { Form, Button } from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import Meme from './Meme';
+import {v4 as uuid } from 'uuid';
 
 function MemeForm() {
     const INITIAL_STATE = {image_url: "", top_text: "", bottom_text: ""}
@@ -15,9 +16,10 @@ function MemeForm() {
         setFormData(formData => ({...formData, [name]: value}));
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch({type: 'MEME', payload: <Meme image_url={formData.image_url} top_text={formData.top_text} bottom_text={formData.bottom_text} />})
+        const id = uuid()
+        dispatch({type: 'MEME', payload: <Meme key={id} id={id} image_url={formData.image_url} top_text={formData.top_text} bottom_text={formData.bottom_text} />})
  
     }
     
